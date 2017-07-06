@@ -1,9 +1,92 @@
 @charset "UTF-8";
 
+/*font import*/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
+
+html{
+    font-size: 16px;
+}
+
+.container{
+    background-color: #f1f1f1;
+    padding: 0;
+}
+
+
+header{
+    height: 100px;
+    border-bottom: 1px solid #8F002E;
+    margin-bottom: 1rem;
+    background-color: white;
+    padding: 0.625rem;
+}
+
+h1, h2{
+    font-family: 'Open Sans', sans-serif;
+}
+
+h2{
+    text-decoration: underline;
+}
+
+#weather_widget{
+    width: 300px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    background-color: #C6E0E6;
+    padding: 0.625rem;
+}
+
+#city_coutr{
+    font-weight: bold;
+}
+
+#temp{
+    font-weight: bold;
+}
+
+#msg{
+    text-align: center;
+    width: 300px;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    background-color: #C6E0E6;
+    padding: 0.625rem;
+}
+
 #map {
     
-    margin: 0 auto;
     height: 300px;
     width: 300px;
+    margin-bottom: 1rem;
     
+}
+
+#output{
+    width: 300px;
+    text-align: center;
+    margin-bottom: 1rem;
+    background-color: #C6E0E6;
+    padding: 0.625rem;
+}
+
+#loca_name{
+    font-weight: bold;
+}
+
+#loca_vicin{
+    text-decoration: underline;
+    margin-bottom: 1rem;
+}
+
+footer{
+    height: 100px;
+    border-top: 1px solid #8F002E;
+    text-align: center;
+    background-color: white;
+}
+
+footer > div{
+    color: #8F002E;
+    padding: 0.625rem;
 }

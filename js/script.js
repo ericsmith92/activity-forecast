@@ -25,7 +25,7 @@ function pageLoaded(){
                 
                 //try making call to weather api
                 $.getJSON(baseURL + "?lat=" + lat + "&lon=" + lon +  "&units=metric" + "&APPID=" +apiKey, function(data){
-                   
+                    
                     //grab required weather data for page from JSON object
                     //city name
                     var city = data.name;                    
@@ -47,16 +47,17 @@ function pageLoaded(){
                     var img = "<img id='weather_icon' src='http://openweathermap.org/img/w/" + icon + ".png'>";
                     
                    //add required weather data to html for widget
-                    $('#weather_widget').html("<div id='city_coutr'>" + city + ', ' + country + "</div>");
-                    $('#weather_widget').append("<div id='desc'>" + desc + "</div>");
+                    $('#weather_widget').html('<div id="city_coutr">' + city + ', ' + country + '</div>');
+                    $('#weather_widget').append('<div id="desc">' + desc + '</div>');
 			        $('#weather_widget').append(img);			
-                    $('#weather_widget').append("<div id='temp'>" + temp + '&#8451;' + ' ' +  "High: " + tempMax + ', ' + "Low: " + tempMin + "</div>");    
+                    $('#weather_widget').append('<div id="temp">' + temp + '&#8451;' + '</div>'); 
+                    $('#weather_widget').append('<div id="temp_hilo">' + 'High: ' + tempMax + ', ' + 'Low: ' + tempMin +  '</div>'); 
                     
                     //check weather conditions to compile places list
                     //first, check for to ensure description is not associated with bad weather
                     if(desc !== 'shower rain' && desc !== 'rain' && desc !== 'thunderstorm' && desc !== 'snow' && desc !== 'mist'){
                         //if humidity, temp, and tempMin all okay, get outside
-                        if(humidity > 60 && temp >= 14 && tempMin >= 14){
+                        if(humidity < 60 && temp >= 14 && tempMin >= 14){
                             msg = "Let's get you Outside! Checkout our Suggestions.";
                             
                             typesList = ["park", "stadium", "rv_park", "campground", "zoo", "bar", "night_club", "amusement_park"];
@@ -100,8 +101,6 @@ function pageLoaded(){
                     //grab index based on random number
                     var randomType = typesList[Math.floor(randomInRange(0,typesList.length - 1))];
                     
-                    console.log(randomType);
-                    
                     var request = {
         
                         location: myLocal,
@@ -115,23 +114,23 @@ function pageLoaded(){
                     function callback(results, status) {                        
                         if (status == google.maps.places.PlacesServiceStatus.OK) {
                             for (var i = 0; i < results.length; i++) {
-                                    var place = results[i];    
-                            
+                                    
+                                var place = results[i];    
+                                                           
                                 outputInfo(results[i].name,results[i].rating,results[i].formatted_address);
         
                             createMarker(results[i]);
         
                         }
                     } else {
-                        $('#output').html('Sorry, No results. Please try again.');
+                        $('#output').html('<span class="error text-danger">Sorry, No results. Please refresh to try again.</span>');
                     }
                         
                 }//end callback()
                     
                     var infowindow = new google.maps.InfoWindow({
                                 content: contentString
-                    });
-                    
+                    });                 
                     
     
                     function createMarker(place) {
@@ -148,7 +147,7 @@ function pageLoaded(){
                 }
     
                     function outputInfo(name, rating, vicinity){
-        
+                                              
                          output.innerHTML += "<div id='loca_name'>" + name + "</div>" +
                             "<div id='loc_rating'>" + 'Rating: '+ rating + "</div>" +
                             "<div id='loca_vicin'>" + vicinity + "</div>";        
@@ -157,15 +156,13 @@ function pageLoaded(){
                 });// end of weather api call         
                 
             }, function(){                
-                $('#msg').html('Activity Forecast cannot work without your location :(');
+                $('#msg').html('<span class="error text-danger"> Sorry, Activity Forecast cannot work without your location :(  </span>');
             });
         }else{
             
-            $('#msg').html('Sorry, your Browser does not support Activity Forecast.');
-            
+            $('#msg').html('<span class="error text-danger">Sorry, your Browser does not support Activity Forecast.</span>');            
         }
-    }//end getPosition()
-    
+    }//end getPosition()    
     
 }//end pageLoaded()
 

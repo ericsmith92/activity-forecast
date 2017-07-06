@@ -4,27 +4,34 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width-device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link type="text/css" rel="stylesheet" href="css/style.css">
         <title>Activity Forecast</title>
     </head>
     <body>
         <div class="container">
+            <header>                
+                <h1>Activity Forecast</h1>                
+            </header>
             
-            <div id="weather_widget"></div>
+                <div id="weather_widget"></div>
     
-            <div id="msg"></div>
+                <div id="msg"></div>
     
-            <div id="map"></div>
+                <div id="map"></div>
     
-            <div id="output"></div>        
-        
-        </div>
-        
+                <div id="output">
+                    <h2>Suggestions:</h2>
+                </div> 
+            
+            <footer>
+                <div>&#169;Eric Smith, 2017. All Rights Reserved.</div>
+            </footer>        
+        </div>        
         <script src="js/jquery-3.2.1.js"></script>
         <script src="js/tether.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
-         <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_APIKEY&libraries=places"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_APIKEY&libraries=places"></script>
         <script src="js/script.js"></script>
     </body>
 </html>
