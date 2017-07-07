@@ -91,3 +91,15 @@ footer > div{
     color: #8F002E;
     padding: 0.625rem;
 }
+
+.share-cntr{
+    display: inline-block;
+    padding: 0;
+}
+
+.share-btn{
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+}
+

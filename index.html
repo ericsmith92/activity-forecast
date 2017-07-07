@@ -5,7 +5,7 @@
         <meta name="description" content="An application used to find activities in your area based on the weather">
         <meta name="author" content="Eric Smith">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width-device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!--OG tags-->
         <meta property="og:title" content="Find activities in your area based on the weather">
         <meta property="og:url" content="http://helloericsmith.com/assignments/activity-forecast">
@@ -16,11 +16,12 @@
         <meta name="twitter:title" content="Find activities in your area based on the weather">
         <meta name="twitter:description" content="An application used to find activities in your area based on the weather">
         <meta name="twitter:url" content="http://helloericsmith.com/assignments/activity-forecast">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link type="text/css" rel="stylesheet" href="css/style.css">
         <title>Activity Forecast</title>
     </head>
     <body>
+        <div id="fb-root"></div>
         <div class="container">
             <header>                
                 <h1>Activity Forecast</h1>                
@@ -38,12 +39,23 @@
             
             <footer>
                 <div>&#169;Eric Smith, 2017. All Rights Reserved.</div>
+                
+                <!-- facebook share button-->
+                <div class="fb-share-button share-cntr" data-href="http://helloericsmith.com/assignments/activity-forecast" data-layout="button_count" data-size="small" data-mobile-iframe="true">  <a class="fb-xfbml-parse-ignore"             target="_blank"                                href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fhelloericsmith.com%2Fassignments%2Factivity-forecast&amp;src=sdkpreparse"><img class="share-btn" alt="Share on Facebook" src="images/fb-logo.png"></a></div>
+                
+                <!-- twitter share button -->
+                <div class="share-cntr">
+                    <a class="twitter-share-button"
+                    href="https://twitter.com/intent/tweet?text=What&#x27;s%20the%20Activity%20Forecast?" data-size="small" data-url="http://helloericsmith.com/assignments/activity-forecast"><img class="share-btn" alt="Share on Twitter" src="images/twitter.svg"></a>
+                </div>
+                
             </footer>        
-        </div>        
+        </div>           
         <script src="js/jquery-3.2.1.js"></script>
         <script src="js/tether.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_APIKEY&libraries=places"></script>
         <script src="js/script.js"></script>
+		<script src="js/fb-share.js"></script>
     </body>
 </html>
